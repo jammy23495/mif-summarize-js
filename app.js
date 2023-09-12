@@ -9,9 +9,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 const port = process.env.PORT || 5000
-let generator;
+let generator = await pipeline('summarization');
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     res.send('Welcome to Node MIF Summarization')
 })
 
